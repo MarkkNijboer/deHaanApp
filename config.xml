@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.puuridee.workshop" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>De Haan</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="marknijboer8@gmail.com" href="http://www.puuridee.nl">
+        Mark Nijboer
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="StatusBarBackgroundColor" value="#24275e" />
+    <icon src="www/res/mipmap-xhdpi/ic_launcher.png" />
+    <!--
+        Default icon should work, but cordova don't overwrite
+        the default on all densities
+    -->
+    <icon src="www/res/mipmap-mdpi/ic_launcher.png" platform="android" density="mdpi" />
+    <icon src="www/res/mipmap-hdpi/ic_launcher.png" platform="android" density="hdpi" />
+    <icon src="www/res/mipmap-xhdpi/ic_launcher.png" platform="android" density="xhdpi" />
+</widget>

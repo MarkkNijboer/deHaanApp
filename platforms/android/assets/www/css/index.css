@@ -1,0 +1,248 @@
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(../font/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../font/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#f4f4f4;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:14px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+a {
+  text-decoration:none;
+}
+.app {
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+}
+.app-content {
+  position:fixed;
+  top:50px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  overflow-x:auto;
+}
+.menu-overlay {
+  position:fixed;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+  background:rgba(0,0,0,0.6);
+  z-index:100;
+  opacity:0;
+  display:none;
+  transition:0.5s;
+  -webkit-transition:0.5s;
+  -webkit-transform: translateZ(0);
+}
+.menu-overlay.open {
+  opacity:1;
+  display:block;
+  -webkit-transform: translateZ(0);
+}
+.menu {
+  height:50px;
+  background:white;
+  border-bottom:3px solid #24275e;
+  position:relative;
+  z-index:90;
+}
+.menu-click {
+  height:50px;
+  width:50px;
+  background:#24275e;
+  position:absolute;
+}
+.menu-click img {
+  padding: 10px;
+  height: 30px;
+}
+.menu-name {
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  text-align:center;
+  line-height:50px;
+  font-family:'Roboto';
+  font-weight:500;
+  color:#24275e;
+  font-size:16px;
+  text-transform:uppercase;
+  letter-spacing: 2px;
+}
+.mobile-menu {
+  left:-250px;
+  width:250px;
+  top:0px;
+  bottom:0px;
+  position:fixed;
+  transition:0.5s;
+  -webkit-transition:0.5s;
+  background:white;
+  -webkit-transform: translateZ(0);
+}
+.mobile-menu.open {
+  left:0px;
+  -webkit-transform: translateZ(0);
+}
+.menu-logo img {
+  width:150px;
+  padding:10px;
+  display:inline;
+}
+.menu-logo {
+  bottom: 0px;
+  position: absolute;
+  text-align:center;
+  width:100%;
+}
+.spinner-holder {
+  top:50%;
+  left:50%;
+  margin-left: -20px;
+  margin-top: -120px;
+  position:absolute;
+}
+.menu-holder ul a {
+  height:40px;
+  line-height:40px;
+  color:#24275e;
+  text-transform: uppercase;
+  font-weight:bold;
+  letter-spacing: 1px;
+  border-top:1px solid #eee;
+  padding:0px 20px;
+  display:block;
+}
+.menu-holder ul a:active {
+  background:#eee;
+}
+.menu-holder > ul {
+  padding:0px;
+  margin:0 auto;
+  margin-top:40px;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+.spinner img {
+  width:40px;
+  height:40px;
+}
+.page-padding {
+  padding:20px 10px;
+  position:relative;
+}
+.block {
+  background:white;
+  box-shadow:0px 2px 6px rgba(0,0,0,0.2);
+  border-radius:3px;
+  margin-bottom:20px;
+}
+.block-link {
+  overflow:hidden;
+}
+.block-link-img {
+  position:relative;
+}
+.block-link-text {
+  height:50px;
+  line-height:50px;
+  position:relative;
+  padding:0px 10px;
+  font-weight:500;
+  font-family:'Roboto';
+  color:#24275e;
+}
+.block-link-text-icon {
+  position:absolute;
+  right:0px;
+  width:50px;
+  top:0px;
+  height:50px;
+  background:#24275e;
+  color:white;
+  text-align:center;
+  font-size:24px;
+}
+.flipbook-item {
+  display:none;
+}
+.flipbook-item img {
+  width:100%;
+}
+.block-link-img img {
+  width:100%;
+  display:block;
+}
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}

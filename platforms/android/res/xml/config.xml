@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.puuridee.workshop" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-intent href="market:*" />
+    <name>De Haan</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="marknijboer8@gmail.com" href="http://www.puuridee.nl">
+        Mark Nijboer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="StatusBarBackgroundColor" value="#24275e" />
+    <icon src="www/res/mipmap-xhdpi/ic_launcher.png" />
+    <icon density="mdpi" platform="android" src="www/res/mipmap-mdpi/ic_launcher.png" />
+    <icon density="hdpi" platform="android" src="www/res/mipmap-hdpi/ic_launcher.png" />
+    <icon density="xhdpi" platform="android" src="www/res/mipmap-xhdpi/ic_launcher.png" />
+</widget>
