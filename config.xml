@@ -24,6 +24,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="StatusBarBackgroundColor" value="#24275e" />
+    <preference name="StatusBarOverlaysWebView" value="false" /> 
     <preference name="orientation" value="portrait" />
     <icon src="www/res/mipmap-xhdpi/ic_launcher.png" />
     <icon src="www/res/mipmap-mdpi/ic_launcher.png" platform="android" density="mdpi" />
