@@ -26,11 +26,12 @@ document.querySelector(".menu-overlay").addEventListener("click", function() {
 }, true);
 var codeToExecute = {
   "Brochure" : function() {
-    var flipbook = document.querySelector(".flipbook");
-    getFirstChild(flipbook).style.display="block";
-    getFirstChild(flipbook).classList.add("active");
 
-    var hammertime = new Hammer(flipbook, {});
+    var flipbook = $(".flipbook .flipbook-item").first();
+    flipbook.show();
+    flipbook.addClass("active");
+
+    var hammertime = new Hammer($(".flipbook")[0], {});
     hammertime.on('swipeleft', function(ev) {
       if ($(".flipbook-item.active").next().length != 0) {
         $(".flipbook-item.active").removeClass("active").next().addClass("active");
@@ -63,8 +64,8 @@ function loadPage(page, name) {
         $("#spinner").hide();
         $("#page-overlay").hide();
         $("#page-content").show();
+        checkCodeToExecute(name);
     });
-    checkCodeToExecute(name);
   });
 }
 loadPage("templates/home.html", "Home");

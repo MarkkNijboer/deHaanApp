@@ -5,7 +5,7 @@ window.onerror = function(msg, url, line, col, error) {
    extra += !error ? '' : '\nerror: ' + error;
 
    // You can view the information in an alert to see things working like this:
-   alert("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
+   document.write("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
 
    // TODO: Report this error via ajax so you can keep track
    //       of what pages have JS issues
@@ -13,7 +13,7 @@ window.onerror = function(msg, url, line, col, error) {
    var suppressErrorAlert = true;
    // If you return true, then error alerts (like in older versions of
    // Internet Explorer) will be suppressed.
-   return suppressErrorAlert;
+   // return suppressErrorAlert;
 };
 
 document.querySelector(".menu-click").addEventListener("click", function() {
@@ -24,14 +24,14 @@ document.querySelector(".menu-overlay").addEventListener("click", function() {
   document.querySelector(".mobile-menu").classList.remove("open");
   document.querySelector(".menu-overlay").classList.remove("open");
 }, true);
-
 var codeToExecute = {
   "Brochure" : function() {
-    var flipbook = document.querySelector(".flipbook");
-    getFirstChild(flipbook).style.display="block";
-    getFirstChild(flipbook).classList.add("active");
 
-    var hammertime = new Hammer(flipbook, {});
+    var flipbook = $(".flipbook .flipbook-item").first();
+    flipbook.show();
+    flipbook.addClass("active");
+
+    var hammertime = new Hammer($(".flipbook")[0], {});
     hammertime.on('swipeleft', function(ev) {
       if ($(".flipbook-item.active").next().length != 0) {
         $(".flipbook-item.active").removeClass("active").next().addClass("active");
@@ -57,27 +57,27 @@ function getFirstChild(el){
 }
 
 function loadPage(page, name) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-         document.getElementById("page-content").innerHTML = xhttp.responseText;
-         document.getElementById("page-name").innerHTML = name;
-         document.getElementById("spinner").style.display="none";
-         document.getElementById("page-content").style.display="block";
-         checkCodeToExecute(name);
-      }
-  };
-  xhttp.open("GET", page, true);
-  xhttp.send();
+  $(function() {
+    $.get(page, function(data, status){
+        $("#page-content").html(data);
+        $("#page-name").html(name);
+        $("#spinner").hide();
+        $("#page-overlay").hide();
+        $("#page-content").show();
+        checkCodeToExecute(name);
+    });
+  });
 }
 loadPage("templates/home.html", "Home");
 
 function execLink(href, name) {
-  document.getElementById("spinner").style.display="block";
-  document.getElementById("page-content").style.display="none";
-  document.querySelector(".mobile-menu").classList.remove("open");
-  document.querySelector(".menu-overlay").classList.remove("open");
-  loadPage(href, name);
+  $(function() {
+    $("#spinner").show();
+    $("#page-content").hide();
+    $(".mobile-menu").removeClass("open");
+    $(".menu-overlay").removeClass("open");
+    loadPage(href, name);
+  });
 }
 function checkCodeToExecute(name) {
   if(typeof codeToExecute[name] !== "undefined") {
@@ -86,7 +86,12 @@ function checkCodeToExecute(name) {
 }
 
 $(function() {
+  $("[data-link]").on("click", function() {
+    console.log("click");
+    execLink(this.getAttribute("data-href"), this.getAttribute("data-name"));
+  });
   $(document).on("click", "[data-link]", function() {
+    console.log("click");
     execLink(this.getAttribute("data-href"), this.getAttribute("data-name"));
   });
 });
