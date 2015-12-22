@@ -26,6 +26,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="StatusBarBackgroundColor" value="#24275e" />
+    <preference name="orientation" value="portrait" />
     <icon src="www/res/mipmap-xhdpi/ic_launcher.png" />
     <icon density="mdpi" platform="android" src="www/res/mipmap-mdpi/ic_launcher.png" />
     <icon density="hdpi" platform="android" src="www/res/mipmap-hdpi/ic_launcher.png" />

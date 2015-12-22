@@ -14,6 +14,13 @@
   src: local('Roboto'), local('Roboto-Regular'), url(../font/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
+/* latin */
+@font-face {
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Futura'), local('Futura-Bold'), url(../font/Futura-Bold.woff2) format('woff2');
+}
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -75,16 +82,10 @@ a {
   right:0px;
   background:rgba(0,0,0,0.6);
   z-index:100;
-  opacity:0;
   display:none;
-  transition:0.5s;
-  -webkit-transition:0.5s;
-  -webkit-transform: translateZ(0);
 }
 .menu-overlay.open {
-  opacity:1;
   display:block;
-  -webkit-transform: translateZ(0);
 }
 .menu {
   height:50px;
@@ -92,6 +93,9 @@ a {
   border-bottom:3px solid #24275e;
   position:relative;
   z-index:90;
+  background-image:URL("../img/body-background.jpg");
+  background-position:50% 50%;
+  background-size:cover;
 }
 .menu-click {
   height:50px;
@@ -111,12 +115,11 @@ a {
   right:0px;
   text-align:center;
   line-height:50px;
-  font-family:'Roboto';
-  font-weight:500;
+  font-family:'Futura';
   color:#24275e;
   font-size:16px;
   text-transform:uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .mobile-menu {
   left:-250px;
@@ -156,7 +159,7 @@ a {
   line-height:40px;
   color:#24275e;
   text-transform: uppercase;
-  font-weight:bold;
+  font-family:'Futura';
   letter-spacing: 1px;
   border-top:1px solid #eee;
   padding:0px 20px;
@@ -183,7 +186,7 @@ a {
   height:40px;
 }
 .page-padding {
-  padding:20px 10px;
+  margin:20px 10px;
   position:relative;
 }
 .block {
@@ -219,7 +222,15 @@ a {
   font-size:24px;
 }
 .flipbook-item {
-  display:none;
+  opacity:0;
+  visibility:hidden;
+  position:absolute;
+  transition:0.5s;
+  -webkit-transition:0.5s;
+}
+.flipbook-item.active {
+  opacity:1;
+  visibility: visible;
 }
 .flipbook-item img {
   width:100%;
@@ -227,6 +238,15 @@ a {
 .block-link-img img {
   width:100%;
   display:block;
+}
+#page-page {
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  background:rgba(120,120,120,0.5);
+  padding:8px;
+  border-radius:3px 0px 0px 0px;
+  color:#666;
 }
 @-webkit-keyframes sk-rotateplane {
   0% { -webkit-transform: perspective(120px) }

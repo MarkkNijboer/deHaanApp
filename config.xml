@@ -24,11 +24,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="StatusBarBackgroundColor" value="#24275e" />
+    <preference name="orientation" value="portrait" />
     <icon src="www/res/mipmap-xhdpi/ic_launcher.png" />
-    <!--
-        Default icon should work, but cordova don't overwrite
-        the default on all densities
-    -->
     <icon src="www/res/mipmap-mdpi/ic_launcher.png" platform="android" density="mdpi" />
     <icon src="www/res/mipmap-hdpi/ic_launcher.png" platform="android" density="hdpi" />
     <icon src="www/res/mipmap-xhdpi/ic_launcher.png" platform="android" density="xhdpi" />
