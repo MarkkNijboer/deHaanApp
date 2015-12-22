@@ -94,4 +94,10 @@ $(function() {
     console.log("click");
     execLink(this.getAttribute("data-href"), this.getAttribute("data-name"));
   });
+
+
+  // Hide splashscreen
+  setTimeout(function() {
+    $(".splash-screen").hide();
+  }, 3000);
 });
