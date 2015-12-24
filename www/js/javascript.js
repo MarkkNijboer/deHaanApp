@@ -46,6 +46,12 @@ var codeToExecute = {
     });
     $("#page-page-current").text('1');
     $("#page-page-max").text($(".flipbook-item").length);
+  },
+  "Vibration Demo" : function() {
+    $("#buzz-button").click(function() {
+      navigator.vibrate([80, 100, 80, 50, 80, 50, 80, 200, 80, 300, 80, 140, 80]);
+    });
+  }
   }
 };
 function getFirstChild(el){

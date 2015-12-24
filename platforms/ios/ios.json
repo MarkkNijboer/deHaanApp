@@ -19,8 +19,17 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
                         }
                     ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": []
                 }
             }
         }
@@ -30,6 +39,9 @@
             "PACKAGE_NAME": "com.puuridee.workshop"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.puuridee.workshop"
+        },
+        "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.puuridee.workshop"
         }
     },
@@ -42,10 +54,20 @@
             "clobbers": [
                 "window.StatusBar"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+            "id": "cordova-plugin-vibration.notification",
+            "pluginId": "cordova-plugin-vibration",
+            "merges": [
+                "navigator.notification",
+                "navigator"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-statusbar": "2.0.0",
-        "cordova-plugin-whitelist": "1.2.0"
+        "cordova-plugin-whitelist": "1.2.0",
+        "cordova-plugin-vibration": "2.0.1-dev"
     }
 }

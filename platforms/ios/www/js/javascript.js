@@ -26,11 +26,12 @@ document.querySelector(".menu-overlay").addEventListener("click", function() {
 }, true);
 var codeToExecute = {
   "Brochure" : function() {
-    var flipbook = document.querySelector(".flipbook");
-    getFirstChild(flipbook).style.display="block";
-    getFirstChild(flipbook).classList.add("active");
 
-    var hammertime = new Hammer(flipbook, {});
+    var flipbook = $(".flipbook .flipbook-item").first();
+    flipbook.show();
+    flipbook.addClass("active");
+
+    var hammertime = new Hammer($(".flipbook")[0], {});
     hammertime.on('swipeleft', function(ev) {
       if ($(".flipbook-item.active").next().length != 0) {
         $(".flipbook-item.active").removeClass("active").next().addClass("active");
@@ -45,6 +46,16 @@ var codeToExecute = {
     });
     $("#page-page-current").text('1');
     $("#page-page-max").text($(".flipbook-item").length);
+  },
+  "Vibration Demo" : function() {
+    $("#buzz-button").click(function() {
+      navigator.vibrate([80, 100, 80, 50, 80, 50, 80, 200, 80, 300, 80, 140, 80]);
+    });
+  },
+  "Camera Demo" : function() {
+    $("#camera-button").click(function() {
+      navigator.vibrate([80, 100, 80, 50, 80, 50, 80, 200, 80, 300, 80, 140, 80]);
+    });
   }
 };
 function getFirstChild(el){
@@ -63,8 +74,8 @@ function loadPage(page, name) {
         $("#spinner").hide();
         $("#page-overlay").hide();
         $("#page-content").show();
+        checkCodeToExecute(name);
     });
-    checkCodeToExecute(name);
   });
 }
 loadPage("templates/home.html", "Home");
@@ -93,4 +104,10 @@ $(function() {
     console.log("click");
     execLink(this.getAttribute("data-href"), this.getAttribute("data-name"));
   });
+
+
+  // Hide splashscreen
+  setTimeout(function() {
+    $(".splash-screen").hide();
+  }, 3000);
 });

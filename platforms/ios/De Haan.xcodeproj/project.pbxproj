@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		04739EE4A67444A0B525AC03 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4342F596398487BAB136AD9 /* CDVStatusBar.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -41,6 +40,11 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		C2154140B3614FCEA3DC749C /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D1BBBBC31748E5BCD7DB75 /* CDVVibration.m */; };
+		F12992BA0D2343F4B259E185 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F15AE9942FD4212A31D08E1 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5E35BE488EFB45AC8D3F05DA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC67E0FC95BB499A8987C2FE /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		80B689A97ECD4AC39FAE2FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A838DD11224471AB483D994 /* CoreLocation.framework */; };
+		C308CC752A7F4F2EABE9C57A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F031AAE41EE497690128E9D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,12 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "De Haan/config.xml"; sourceTree = "<group>"; };
+		27D1BBBBC31748E5BCD7DB75 /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "cordova-plugin-vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D88CDB96C8864F52B6C9C633 /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9F15AE9942FD4212A31D08E1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		CC67E0FC95BB499A8987C2FE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ImageIO.framework"; path = "System/Library/Frameworks/ImageIO.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		3A838DD11224471AB483D994 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		8F031AAE41EE497690128E9D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,10 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				F12992BA0D2343F4B259E185 /* AudioToolbox.framework in Frameworks */,
+				5E35BE488EFB45AC8D3F05DA /* ImageIO.framework in Frameworks */,
+				80B689A97ECD4AC39FAE2FB3 /* CoreLocation.framework in Frameworks */,
+				C308CC752A7F4F2EABE9C57A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +203,10 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				9F15AE9942FD4212A31D08E1 /* AudioToolbox.framework */,
+				CC67E0FC95BB499A8987C2FE /* ImageIO.framework */,
+				3A838DD11224471AB483D994 /* CoreLocation.framework */,
+				8F031AAE41EE497690128E9D /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +224,8 @@
 			children = (
 				D4342F596398487BAB136AD9 /* CDVStatusBar.m */,
 				72F736FB3DF949F6A5A7E2D8 /* CDVStatusBar.h */,
+				27D1BBBBC31748E5BCD7DB75 /* CDVVibration.m */,
+				D88CDB96C8864F52B6C9C633 /* CDVVibration.h */,
 			);
 			name = Plugins;
 			path = "De Haan/Plugins";
@@ -391,6 +411,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				04739EE4A67444A0B525AC03 /* CDVStatusBar.m in Sources */,
+				C2154140B3614FCEA3DC749C /* CDVVibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

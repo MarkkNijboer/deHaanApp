@@ -268,6 +268,12 @@ a {
 .splash-center img {
   width:180px;
 }
+.button {
+  border:none;
+  color:white;
+  padding:6px 8px;
+  background:#24275e;
+}
 @-webkit-keyframes sk-rotateplane {
   0% { -webkit-transform: perspective(120px) }
   50% { -webkit-transform: perspective(120px) rotateY(180deg) }
